@@ -1,1 +1,106 @@
 
+1.Encapsulation
+class Account {  
+//private data members  
+private long acc_no;  
+private String name,email;  
+private float amount;  
+//public getter and setter methods  
+public long getAcc_no() {  
+    return acc_no;  
+}  
+public void setAcc_no(long acc_no) {  
+    this.acc_no = acc_no;  
+}  
+public String getName() {  
+    return name;  
+}  
+public void setName(String name) {  
+    this.name = name;  
+}  
+public String getEmail() {  
+    return email;  
+}  
+public void setEmail(String email) {  
+    this.email = email;  
+}  
+public float getAmount() {  
+    return amount;  
+}  
+public void setAmount(float amount) {  
+    this.amount = amount;  
+}  
+  
+}
+
+2.Inheritance
+class Animal{  
+void eat(){System.out.println("eating...");}  
+}  
+class Dog extends Animal{  
+void bark(){System.out.println("barking...");}  
+}  
+class Cat extends Animal{  
+void meow(){System.out.println("meowing...");}  
+}  
+class TestInheritance3{  
+public static void main(String args[]){  
+Cat c=new Cat();  
+c.meow();  
+c.eat();  
+//c.bark();//C.T.Error  
+}}
+
+3.Abstraction
+abstract class Shape{  
+abstract void draw();  
+}  
+//In real scenario, implementation is provided by others i.e. unknown by end user  
+class Rectangle extends Shape{  
+void draw(){System.out.println("drawing rectangle");}  
+}  
+class Circle1 extends Shape{  
+void draw(){System.out.println("drawing circle");}  
+}  
+//In real scenario, method is called by programmer or user  
+class TestAbstraction1{  
+public static void main(String args[]){  
+Shape s=new Circle1();//In a real scenario, object is provided through method, e.g., getShape() method  
+s.draw();  
+}  
+}
+
+4.exception handling
+class Main {
+  public static void main(String[] args) {
+
+    try {
+
+      // code that generate exception
+      int divideByZero = 5 / 0;
+      System.out.println("Rest of code in try block");
+    }
+    
+    catch (ArithmeticException e) {
+      System.out.println("ArithmeticException => " + e.getMessage());
+    }
+  }
+}
+
+5.Threads
+
+public class MyThread1  
+{  
+// Main method  
+public static void main(String argvs[])  
+{  
+// creating an object of the Thread class using the constructor Thread(String name)   
+Thread t= new Thread("My first thread");  
+  
+// the start() method moves the thread to the active state  
+t.start();  
+// getting the thread name by invoking the getName() method  
+String str = t.getName();  
+System.out.println(str);  
+}  
+}
